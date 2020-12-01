@@ -13,13 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Untuk mencoba tampilan index
 Route::get('/', function () {
-    // return view('welcome');
+    return view('berita.index');
+})->name('coba.index');
 
-    // return view('berita.index');
+// Untuk mencoba tampilan detail
+Route::get('/detail', function () {
     return view('berita.detail');
-});
+})->name('coba.detail');
 
+// untuk authentification, tapi ini nanti
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
