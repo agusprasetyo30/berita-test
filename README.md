@@ -1,7 +1,7 @@
 # Berita UAS
 > Ini repository digunakan untuk membantu UAS si eldha . . . 
 
-### How to install
+# How to install
 1. clone/download file/repository ini
    > Saranku sih di clone aja
 2. Setelah selesai jangan lupa jalankan `composer install`
@@ -11,7 +11,7 @@
 5. Lalu jalankan `php artisan serve` untuk menjalankan server
 6. Selesai . . .
 
-### Versioning
+# Versioning
 - 0.0.1
   - Membuat file laravel baru
   - Desain template untuk berita dan detail berita
