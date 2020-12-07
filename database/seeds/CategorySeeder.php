@@ -14,6 +14,7 @@ class CategorySeeder extends Seeder
     {
         echo "[-] Tambah kategori dalam proses . . . <br>";
 
+        // Menambahkan kategori baru
         for ($i=1; $i <= 2; $i++) { 
             Category::create([
                 'name' => 'kategori' . $i,

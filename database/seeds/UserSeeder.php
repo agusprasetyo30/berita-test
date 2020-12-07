@@ -15,6 +15,7 @@ class UserSeeder extends Seeder
     {
         echo "[-] Tambah pengguna dalam proses . . .";
 
+        // Menambahkan pengguna baru
         User::create([
             'name'      => 'admin',
             'email'     => 'admin@gmail.com',
