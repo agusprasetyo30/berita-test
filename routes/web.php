@@ -1,5 +1,6 @@
 <?php
 
+use App\News;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,7 +16,8 @@ use Illuminate\Support\Facades\Route;
 
 // Untuk mencoba tampilan index
 Route::get('/', function () {
-    return view('berita.index');
+    // return view('berita.index');
+    // dd(News::with('users')->get());
 })->name('coba.index');
 
 // Untuk mencoba tampilan detail

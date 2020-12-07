@@ -12,7 +12,7 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        echo "[-] Tambah kategori dalam proses . . .";
+        echo "[-] Tambah kategori dalam proses . . . <br>";
 
         for ($i=1; $i <= 2; $i++) { 
             Category::create([
@@ -20,6 +20,6 @@ class CategorySeeder extends Seeder
             ]);
         }
 
-        echo "[+] Tambah kategori sudah selesai . . .";
+        echo "[+] Tambah kategori sudah selesai . . . <br>";
     }
 }
