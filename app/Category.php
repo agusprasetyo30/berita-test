@@ -8,4 +8,6 @@ class Category extends Model
 {
     protected $table = 'categories';
     
+    // kolom yang boleh diisi
+    protected $fillable = ['name'];
 }
