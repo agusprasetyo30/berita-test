@@ -15,8 +15,8 @@ class AddRelationCreatedByWithUsers extends Migration
     {
         Schema::table('news', function (Blueprint $table) {
             $table->foreign('created_by')
-                ->references('users')
-                ->on('id')
+                ->references('id')
+                ->on('news')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
