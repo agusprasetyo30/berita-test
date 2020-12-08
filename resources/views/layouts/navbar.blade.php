@@ -8,13 +8,13 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-               <a class="nav-link" href="#">Berita <span class="sr-only">(current)</span></a>
+               <a class="nav-link" href="{{ route('admin.berita.index') }}">Berita</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="#">Kategori <span class="sr-only">(current)</span></a>
+               <a class="nav-link" href="{{ route('admin.kategori.index') }}">Kategori</span></a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="#">Pengguna <span class="sr-only">(current)</span></a>
+               <a class="nav-link" href="{{ route('admin.pengguna.index') }}">Pengguna</span></a>
             </li>
             <li class="nav-item dropdown active">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

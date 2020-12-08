@@ -14,18 +14,36 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Untuk mencoba tampilan index
-Route::get('/', function () {
-    // return view('berita.index');
-    // dd(News::with('users')->get());
-})->name('coba.index');
+// Ini route untuk pengguna yang tidak login
+Route::group(['auth' => 'guest'], function () {
+    // Untuk mencoba tampilan index
+    Route::get('/', function () {
+        return view('berita.index');
+        // dd(News::with(['users', 'categories'])->get());
+    })->name('coba.index');
 
-// Untuk mencoba tampilan detail
-Route::get('/detail', function () {
-    return view('berita.detail');
-})->name('coba.detail');
+    // Untuk mencoba tampilan detail
+    Route::get('/detail', function () {
+        return view('berita.detail');
+    })->name('coba.detail');
+});
+
+
+// Ini route untuk pengguna yang login
+Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+    Route::resource('berita', 'NewsController');
+    Route::resource('kategori', 'CategoryController');
+    Route::resource('pengguna', 'UserController');
+
+});
 
 // untuk authentification, tapi ini nanti
-Auth::routes();
+Auth::routes([
+    'login'     => true,
+    'logout'    => true,
+    'register'  => false,
+    'confirm'   => false,
+    'verify'    => false
+]);
 
 // Route::get('/home', 'HomeController@index')->name('home');

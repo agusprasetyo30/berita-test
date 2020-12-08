@@ -38,7 +38,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * one to many ke tabel item
+     * one to many ke tabel news
      *
      * @return void
      */
