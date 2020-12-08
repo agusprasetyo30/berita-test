@@ -24,3 +24,8 @@ Ini repository digunakan untuk membantu UAS si eldha . . .
   - Menambahkan Seeder
 - 0.0.3
   - Menambahkan CRUD kategori berita
+  - Menambahkan package untuk `Upload Gambar`
+  - Menambahkan helpers baru `App/Helpers/Helper.php`
+
+# Package Use
+   - `intervention/image`
