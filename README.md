@@ -22,3 +22,5 @@ Ini repository digunakan untuk membantu UAS si eldha . . .
   - Menambahkan Model
   - Menambahkan Controller
   - Menambahkan Seeder
+- 0.0.3
+  - Menambahkan CRUD kategori berita

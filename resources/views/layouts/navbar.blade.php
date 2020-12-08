@@ -11,7 +11,7 @@
                <a class="nav-link" href="{{ route('admin.berita.index') }}">Berita</a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="{{ route('admin.kategori.index') }}">Kategori</span></a>
+               <a class="nav-link {{ Request::is('admin/kategori*') ? ' active' : '' }}" href="{{ route('admin.kategori.index') }}">Kategori</span></a>
             </li>
             <li class="nav-item">
                <a class="nav-link" href="{{ route('admin.pengguna.index') }}">Pengguna</span></a>

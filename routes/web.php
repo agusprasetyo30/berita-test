@@ -31,10 +31,12 @@ Route::group(['auth' => 'guest'], function () {
 
 // Ini route untuk pengguna yang login
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
-    Route::resource('berita', 'NewsController');
-    Route::resource('kategori', 'CategoryController');
-    Route::resource('pengguna', 'UserController');
-
+    Route::resource('berita', 'NewsController',
+    ['except' => 'show']);
+    Route::resource('kategori', 'CategoryController',
+    ['except' => 'show']);
+    Route::resource('pengguna', 'UserController',
+    ['except' => 'show']);
 });
 
 // untuk authentification, tapi ini nanti
