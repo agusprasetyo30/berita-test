@@ -2,83 +2,31 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
 use Illuminate\Http\Request;
 
 class NewsReaderController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Digunakan untuk menampilkan daftar berita
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
-    public function index()
+    public function dashboard()
     {
-        //
+        $newses = News::paginate(5);
+        return view('berita.index', compact('newses'));
     }
 
     /**
-     * Show the form for creating a new resource.
+     * Menampilkan detail berita
      *
-     * @return \Illuminate\Http\Response
+     * @return void
      */
-    public function create()
+    public function detailBerita($slug_title)
     {
-        //
-    }
+        $news = News::where('slug_title', $slug_title)->firstOrFail();
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy($id)
-    {
-        //
+        return view('berita.detail', compact('news'));
     }
 }

@@ -15,22 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Ini route untuk pengguna yang tidak login
-Route::group(['auth' => 'guest'], function () {
+Route::group(['auth' => 'guest', 'as' => 'berita.'], function () {
     // Untuk mencoba tampilan index
-    Route::get('/', function () {
-        return view('berita.index');
-        // dd(News::with(['users', 'categories'])->get());
-    })->name('coba.index');
+    Route::get('/', 'NewsReaderController@dashboard')->name('dashboard');
 
-    // Untuk mencoba tampilan detail
-    Route::get('/detail', function () {
-        return view('berita.detail');
-    })->name('coba.detail');
+    // Untuk mencoba tampilan detail berita
+    Route::get('/{slug_title}/detail', 'NewsReaderController@detailBerita')->name('detail');
 });
 
 
 // Ini route untuk pengguna yang login
-Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
+Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('berita', 'NewsController',
     ['except' => 'show']);
     
@@ -50,4 +45,3 @@ Auth::routes([
     'verify'    => false
 ]);
 
-// Route::get('/home', 'HomeController@index')->name('home');

@@ -5,6 +5,7 @@
 @section('content')
 <form action="{{ route('admin.berita.update', $news->id) }}" method="post">
 @csrf
+@method('put')
    <div class="row justify-content-center">
          <div class="col-md-6">
             <div class="card card-default">

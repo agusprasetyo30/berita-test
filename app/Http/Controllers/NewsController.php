@@ -94,7 +94,23 @@ class NewsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // untuk menyimpan data yang sudah diinputkan
+        $news = News::where('id', $id)->firstOrFail();
+
+        $news->title      = $request->get('judul'); // mengambil inputan berdasarkan nama
+        $news->slug_title = Str::slug($request->get('judul')); // membuat data berupa SLUG sesuai dengan judul
+        $news->news_text  = $request->get('isi_berita'); // mengambil inputan berdasarkan isi berita
+        $news->created_by = \Auth::user()->id; // mengambil ID PENGGUNA yang login
+
+        // untuk menyimpan inputan
+        $news->save();
+
+        // Menambahkan kategori yang dipilih
+        $news->categories()->sync($request->get('categories'));
+
+        // Kembali ke data index kategori
+        return redirect()
+            ->route('admin.berita.index');
     }
 
     /**
