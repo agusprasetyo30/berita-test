@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -13,7 +16,9 @@ class UserController extends Controller
      */
     public function index()
     {
-        return view('admin.pengguna.index');
+        $users = User::all();
+
+        return view('admin.pengguna.index', compact('users'));
     }
 
     /**
@@ -23,7 +28,7 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.pengguna.create');
     }
 
     /**
@@ -34,7 +39,22 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'nama' => ['required', 'string', 'max:20'], // Untuk validasi nama, maksimal 20
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'], // Untuk valiasi email, email tidak boleh sama dengan yg lain
+            'password' => ['required', 'string', 'min:5', 'confirmed'], //embuat validasi password beserta konfirmasi password 
+        ]);
+
+        $user = new User();
+
+        $user->name = $request->get('nama');
+        $user->email = $request->get('email');
+        $user->password = Hash::make($request->get('password'));
+
+        $user->save();
+
+        return redirect()
+            ->route('admin.pengguna.index');
     }
 
     /**

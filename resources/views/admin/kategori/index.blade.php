@@ -8,7 +8,7 @@
       <div class="card card-default">
          <div class="card-header">
             <h5 class="card-title d-inline">Daftar Kategori</h5>
-            <a href="{{ route('admin.kategori.create') }}" class="btn btn-success btn-sm float-right">Add Category</a>
+            <a href="{{ route('admin.kategori.create') }}" class="btn btn-success btn-sm float-right">Tambah Kategori</a>
          </div>
          <div class="card-body">
             <table class="table table-bordered table-hover table-striped">

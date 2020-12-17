@@ -14,9 +14,9 @@
                <a class="nav-link {{ Request::is('admin/kategori*') ? ' active' : '' }}" href="{{ route('admin.kategori.index') }}">Kategori</span></a>
             </li>
             <li class="nav-item">
-               <a class="nav-link" href="{{ route('admin.pengguna.index') }}">Pengguna</span></a>
+               <a class="nav-link {{ Request::is('admin/pengguna*') ? ' active' : '' }}" href="{{ route('admin.pengguna.index') }}">Pengguna</span></a>
             </li>
-            <li class="nav-item dropdown active">
+            <li class="nav-item dropdown ">
                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Nama Pengguna
                </a>
