@@ -29,12 +29,7 @@
                            <td>{{ $user->email }}</td>
                            <td>
                               <div class="btn-group-sm">
-                                 <form action="{{ route('admin.pengguna.destroy', $user->id) }}" method="post">
                                  <a href="{{ route('admin.pengguna.edit', $user->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                    @csrf
-                                    @method('delete')
-                                    <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                                 </form>
                               </div>
                            </td>
                         </tr>

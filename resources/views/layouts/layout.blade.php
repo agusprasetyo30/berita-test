@@ -27,6 +27,11 @@
          padding: 2px 6px;
          font-weight: bold;
       }
+
+      /* Untuk pagination biar bisa ketengah */
+      .pagination {
+         justify-content: center;
+      }
    </style>
 
    @stack('css')

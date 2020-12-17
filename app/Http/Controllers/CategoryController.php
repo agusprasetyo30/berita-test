@@ -15,7 +15,8 @@ class CategoryController extends Controller
     public function index()
     {
         // Digunakan untuk menampung data kategori yang akan di tampilkan ke view
-        $categories = Category::all();
+        // di halaman hanya menampilkan 5 kategori
+        $categories = Category::paginate(5);
 
         return view('admin.kategori.index', compact('categories'));
     }

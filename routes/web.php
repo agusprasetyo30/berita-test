@@ -33,10 +33,12 @@ Route::group(['auth' => 'guest'], function () {
 Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
     Route::resource('berita', 'NewsController',
     ['except' => 'show']);
+    
     Route::resource('kategori', 'CategoryController',
     ['except' => 'show']);
+
     Route::resource('pengguna', 'UserController',
-    ['except' => 'show']);
+    ['except' => ['show', 'destroy']]);
 });
 
 // untuk authentification, tapi ini nanti

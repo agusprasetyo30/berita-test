@@ -2,6 +2,10 @@
 
 @section('title', 'Daftar Kategori')
 
+@push('css')
+    
+@endpush
+
 @section('content')
 <div class="row justify-content-center">
    <div class="col-md-8">
@@ -38,7 +42,19 @@
                      </tr>
                   @endforeach
                </tbody>
+               <tfoot>
+                  <tr>
+                     <td colspan=3>
+                        <div class="row justify-content-between">
+                           <div class="col-md-12 ">
+                              {{ $categories->appends(Request::all())->links() }}
+                           </div>
+                        </div>
+                     </td>
+                  </tr>
+               </tfoot>
             </table>
+            
          </div>
       </div>
    </div>
