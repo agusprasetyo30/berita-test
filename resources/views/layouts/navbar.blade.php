@@ -8,7 +8,7 @@
       <div class="collapse navbar-collapse" id="navbarNavDropdown">
          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-               <a class="nav-link" href="{{ route('admin.berita.index') }}">Berita</a>
+               <a class="nav-link {{ Request::is('admin/berita*') ? ' active' : '' }}" href="{{ route('admin.berita.index') }}">Berita</a>
             </li>
             <li class="nav-item">
                <a class="nav-link {{ Request::is('admin/kategori*') ? ' active' : '' }}" href="{{ route('admin.kategori.index') }}">Kategori</span></a>

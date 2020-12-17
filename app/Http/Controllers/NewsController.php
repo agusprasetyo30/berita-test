@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\News;
 use Illuminate\Http\Request;
 
 class NewsController extends Controller
@@ -13,7 +14,9 @@ class NewsController extends Controller
      */
     public function index()
     {
-        return view('admin.berita.index');
+        $newses = News::all();
+
+        return view('admin.berita.index', compact('newses'));
     }
 
     /**
