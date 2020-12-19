@@ -121,6 +121,11 @@ class NewsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        // Untuk menghapus berita berdasarkan ID
+        News::where('id', $id)->delete();
+
+        // Kembali ke data index kategori
+        return redirect()
+            ->back();
     }
 }
