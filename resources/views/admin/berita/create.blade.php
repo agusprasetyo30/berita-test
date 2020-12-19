@@ -5,7 +5,6 @@
 @section('content')
 <form action="{{ route('admin.berita.store') }}" method="post">
 @csrf
-@method('put')
    <div class="row justify-content-center">
          <div class="col-md-6">
             <div class="card card-default">
